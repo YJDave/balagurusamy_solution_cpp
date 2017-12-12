@@ -14,12 +14,12 @@ using namespace std;
 int main()
 {
     int vote,
-        Aparty=0,
-        Bparty=0,
-        Cparty=0,
-        Dparty=0,
-        Eparty=0,
-        spoiltBallots=0;
+        Aparty = 0,
+        Bparty = 0,
+        Cparty = 0,
+        Dparty = 0,
+        Eparty = 0,
+        spoiltBallots = 0;
     //spoiltBallots are vote which do not match to any party's vote
 
     //information to show user

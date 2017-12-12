@@ -22,7 +22,7 @@ int fact(int i)
     int f;
 
     //base condition and result for recursive function
-    if(i<=1)
+    if(i <= 1)
     {
         return 1;
     }
@@ -34,7 +34,7 @@ int fact(int i)
 //to perform SUM function
 double sum()
 {
-    double sumx=0;
+    double sumx = 0;
     for(int i=1;i<=MAX;i++)
     {
         sumx = sumx + pow((float)1/i,i);
@@ -48,12 +48,12 @@ double sum()
 //instead of this-cosx() user defined function
 double cosx(float value)
 {
-    double cosine=0;
+    double cosine = 0;
     int temp;
     for(int i=0;i<MAX;i++)
     {
-        temp=2*i;
-        cosine=cosine+(pow(-1,i)*pow(value,temp))/fact(temp);
+        temp = 2*i;
+        cosine = cosine + (pow(-1,i)*pow(value,temp))/fact(temp);
     }
     return cosine;
 }
@@ -63,12 +63,12 @@ double cosx(float value)
 //instead of this-sinx() user defined function
 double sinx(float value)
 {
-    double sine=0;
+    double sine = 0;
     int temp;
     for(int i=0;i<MAX;i++)
     {
-        temp=2*i+1;
-        sine=sine+(pow(-1,i)*pow(value,temp))/fact(temp);
+        temp = 2*i + 1;
+        sine = sine + (pow(-1,i)*pow(value,temp))/fact(temp);
     }
     return sine;
 }

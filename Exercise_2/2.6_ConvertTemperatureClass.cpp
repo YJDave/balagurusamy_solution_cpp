@@ -15,7 +15,7 @@ class temp
     public:
         void get(float m)
         {
-            t=m;
+            t = m;
         }
         void put()
         {
@@ -26,7 +26,7 @@ class temp
 
 void temp::intoCelsius()
 {
-    t=(t-32)*5/9;
+    t = (t-32)*5/9;
 
 }
 

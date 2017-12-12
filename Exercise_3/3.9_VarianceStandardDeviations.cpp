@@ -24,30 +24,30 @@ public:
 //method to find mean
 void table::mean()
 {
-    m=0;
+    m = 0;
     for(int i=0;i<n;i++)
     {
-        m=m+d[i];
+        m = m + d[i];
     }
-    m=m/n;
+    m = m/n;
 }
 
 //method to find variance of all table data
 void table::variance()
 {
-    v=0;
+    v = 0;
     for(int i=0;i<n;i++)
     {
-        d[i]=d[i]-m;
+        d[i] = d[i]-m;
         v = v+(d[i]*d[i]);
     }
-    v=v/n;
+    v = v/n;
 }
 
 //method to find standard deviation 
 void table::sta_deviation()
 {
-    s=sqrt(v);
+    s = sqrt(v);
 }
 
 //method to store all data into table object

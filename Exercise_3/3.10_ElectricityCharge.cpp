@@ -29,22 +29,22 @@ void user::get()
 //method to find additional charge
 void user::charge()
 {
-    if(unit>=0&&unit<=100)
+    if(unit >= 0 && unit <= 100)
     {
         c = unit*60;
-        c=c/100;
+        c = c/100;
         return;
     }
-    if(unit>100&&unit<=300)
+    if(unit > 100 && unit <= 300)
     {
         c = 100*60+(unit-100)*80;
-        c=c/100;
+        c = c/100;
         return;
     }
-    if(unit>300)
+    if(unit > 300)
     {
         c = 100*60+200*80+(unit-300)*90;
-        c=c/100;
+        c = c/100;
         return;
     }
     //if user enter negative unit or any unappropriate data
@@ -55,12 +55,12 @@ void user::charge()
 //method to find total charge
 void user::total_charge()
 {
-    if(c<50)
+    if(c < 50)
     {
-        c=50;
+        c = 50;
         return;
     }
-    else if(c>300)
+    else if(c > 300)
     {
         c = (c*15)/100 + c;
         return;

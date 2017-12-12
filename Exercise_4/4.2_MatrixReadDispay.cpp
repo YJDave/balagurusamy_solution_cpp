@@ -5,7 +5,7 @@ using std::cin;
 
 int main()
 {
-    int row,column;
+    int row, column;
     cout<<"\nEnter the total no of rows of matrix : ";
     cin>>row;
     cout<<"\nEnter the total no of column of matrix : ";

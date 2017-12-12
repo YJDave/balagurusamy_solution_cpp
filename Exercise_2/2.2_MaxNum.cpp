@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    float no1,no2;
+    float no1, no2;
     cout<<"\nEnter first no : ";
     cin>>no1;
 

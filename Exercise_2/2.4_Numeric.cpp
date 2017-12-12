@@ -15,7 +15,7 @@ using namespace std;
 
 int main()
 {
-    float a,b,c,x;
+    float a, b, c, x;
 
     cout<<"\nEnter value of a : ";
     cin>>a;
@@ -28,7 +28,7 @@ int main()
 
     if ( b != 0 )
     {
-        x=a/b-c;
+        x = a/b-c;
         cout<<"\n\nBy using Equation x = a/b-c \nThe value of x is : "<<x<<endl;
     }
     else
