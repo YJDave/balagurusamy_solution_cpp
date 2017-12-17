@@ -1,7 +1,7 @@
 // Modify the class and the program of Exercise 5.1 for handling 10 customers
 
 /* Methods to test the functionality of program are
-    
+
     * Deposit --> Deposit(add) given amount to total balance of selected account
     * Withdraw --> Withdraw(subtract) given amount from total balance of selected account
     * Display --> Display all detail of selected account
@@ -28,7 +28,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<conio.h>
 #define MAX 50
 using std::cout;
 using std::cin;
@@ -38,37 +37,21 @@ class Account
 
     // Data members
 
-    // we have used dynamic character array to store string variable like name, password etc.
+    // Dynamic character array to store string variable like name, password, type of account etc.
     char *name;
     int no_acc;
-
-    // static "no" variable is used to track no of total accounts
-    static int no;
     char *type_acc;
     float balance;
     char *password;
+
+    // static "no" variable is used to track no of total accounts
+    static int no;
 public:
-
-    // Constructors
-
-    // Default constructor
-    Account(){}
-    // Parameterized constructor
-    Account(char *a,float c,char * d,char * e)
-    {
-        name=new char[strlen(a)];
-        type_acc=new char [strlen(d)];
-        password=new char [strlen(e)];
-        name=a;
-        no_acc=no;
-        no++;
-        balance=c;
-        type_acc=d;
-        password=e;
-    }
 
     // Methods
 
+    // To get account details and store
+    void getAccount(char *, float, char *, char *);
     // To deposit money in account
     void deposit(void);
     // To withdraw money from account
@@ -81,26 +64,38 @@ public:
     int check(char *);
 
     // This method finds the account which has the same account no entered by user
-    // If account exists then returns the position of that account in array 
+    // If account exists then returns the position of that account in array
     // of all account If not then returns -1
-    friend int check_acc(int,Account *,int);
+    friend int check_acc(int, Account *, int);
 };
 
 int Account::no;
 
-int check_acc(int a,Account * p,int i)
+int check_acc(int a, Account * p, int i)
 {
-    for(int k=0;k<=i;p++,k++)
+    for(int k = 0;k <= i;p++,k++)
     {
-        if(p->no_acc==a)
+        if(p->no_acc == a)
             return k;
     }
     return -1;
 }
 
+void Account::getAccount(char *a, float c, char * d, char * e) {
+    name = new char[strlen(a)];
+    type_acc = new char [strlen(d)];
+    password = new char [strlen(e)];
+    name = a;
+    no_acc = no;
+    no++;
+    balance = c;
+    type_acc = d;
+    password = e;
+}
+
 int Account::check(char *a)
 {
-    if(strcmp(a,password)==0)
+    if(strcmp(a,password) == 0)
         return 1;
     return 0;
 }
@@ -114,6 +109,7 @@ void Account::deposit()
     balance = balance + a;
     display();
 }
+
 void Account::withdraw()
 {
     display();
@@ -126,6 +122,7 @@ void Account::withdraw()
     balance = balance - a;
     display();
 }
+
 void Account::display()
 {
     cout<<"\nAccount no : "<<no_acc
@@ -137,23 +134,23 @@ void Account::display()
 int main()
 {
     int i = -1, a, j;
-    char f[MAX], c[MAX];
-    float d;
-    char e[MAX], ps[MAX];
+    char acName[MAX], acPasswprd[MAX];
+    float acBalance;
+    char acType[MAX], passsword[MAX];
     int n = 5;
     Account bn[n];
     do
     {
         i++;
         cout<<"\nEnter the name of Accountant : ";
-        cin>>f;
+        cin>>acName;
         cout<<"Enter the type of Account : ";
-        cin>>e;
+        cin>>acType;
         cout<<"Enter the current balance of Account : ";
-        cin>>d;
+        cin>>acBalance;
         cout<<"Enter the password of Account :";
-        cin>>c;
-        bn[i] = Account(f, d, e, c);
+        cin>>acPasswprd;
+        bn[i].getAccount(acName, acBalance, acType, acPasswprd);
         bn[i].display();
         cout<<"\nEnter 1 to add more account : ";
         cin>>a;
@@ -169,17 +166,17 @@ int main()
             <<"\n4.Exit\n";
         cin>>a;
         if(a!=1 && a!=3 && a!=2)
-            exit(0);
+            return 0;
 
         cout<<"\nEnter the Account no : ";
         cin>>j;
-        j = check_acc(j,bn,i);
+        j = check_acc(j, bn, i);
 
-        if(j!=-1)
+        if(j != -1)
         {
             cout<<"\nEnter the password : ";
-            cin>>ps;
-            if(bn[j].check(ps))
+            cin>>passsword;
+            if(bn[j].check(passsword))
             {
                 switch(a)
                 {
@@ -202,6 +199,6 @@ int main()
         {
             cout<<"\nEntered Account No does not exist \n";
         }
-    }while(a!=4);
+    }while(a != 4);
     return 0;
 }
