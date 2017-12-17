@@ -17,13 +17,9 @@ class DM
 {
 	float meter;
 	float cm;
+
 public:
-    DM()
-    {
-        meter = 0;
-        cm = 0;
-    }
-    DM(float a, float b)
+    void getData(float a = 0, float b = 0)
     {
         meter = a;
         cm = b;
@@ -40,17 +36,13 @@ class DB
 {
 	float feet;
 	float inch;
-public:
 
-	DB()
-    {
-        feet = 0;
-        inch = 0;
-    }
-    DB(float a, float b)
+public:
+    void getData(float a = 0, float b = 0)
     {
         feet = a;
         inch = b;
+
     }
     void display(void)
     {
@@ -71,8 +63,10 @@ DM operator +(const DM &d1, const DB &d2)
 
 int main()
 {
-    DM d1(89,9);
-    DB d2(70,89);
+    DM d1;
+    d1.getData(89,9);
+    DB d2;
+    d2.getData(70,89);
     d1.display();
     d2.display();
     DM d3;
