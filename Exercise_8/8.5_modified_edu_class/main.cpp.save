@@ -30,8 +30,8 @@ class Master : Account , Admin
     void disp_person_info()     //displays person's information
     {
         cout <<"Enter name and code :"<<endl;
-        cin >> personCode>> personName;
-        cout<<"Code:"<<personCode<<"\tName:"<<perName<<endl;
+        cin >> per_name >> per_code;
+        cout<<"Name:"<<per_n<<"\tCode:"<<per_c<<endl;
     }
 
     void get_amount()    //it will take amount and display it
@@ -58,4 +58,3 @@ int main()
 
     return 0;
 }
-
