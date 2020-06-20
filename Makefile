@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -fpermissive -o
 OBJDIRNAME = objs
 BINDIRNAME = bins
 
-DIRS = Exercise_3 Exercise_2 Exercise_4 Exercise_5 Exercise_6 Exercise_7 Exercise_9 Exercise_10 Exercise_11 Exercise_12
+DIRS = Exercise_2 Exercise_3 Exercise_4 Exercise_5 Exercise_6 Exercise_7 Exercise_9 Exercise_10 Exercise_11 Exercise_12
 
 OBJDIRS = $(foreach dir, $(DIRS), $(addprefix $(dir)/, $(OBJDIRNAME)))
 BINDIRS = $(foreach dir, $(DIRS), $(addprefix $(dir)/, $(BINDIRNAME)))
