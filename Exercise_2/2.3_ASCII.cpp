@@ -5,7 +5,13 @@
 
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
 using namespace std;
 
 int main()

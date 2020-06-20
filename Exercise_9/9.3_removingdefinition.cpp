@@ -1,8 +1,17 @@
 /*9.3-Modify the above program by removing the definition
 of display_area() of one derived class.
 Also make display_area() virtual in the base class*/
-#include<conio.h>
+#ifdef _WIN32
 #include<iostream.h>
+#include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
+using namespace std;
 class shape
 {
 	public:
@@ -50,14 +59,14 @@ void rectangle::display_area()
 	cout<<"\nArea="<<area;
 }
 
-void main()
+int main()
 {
 	shape *s1,*s2,*s3;
 	triangle t;
 	rectangle r;
 	circle c;
 	int ch;
-	clrscr();
+	//clrscr(); //changed
 	cout<<"\nEnter 1 for triangle, 2 for rectangle and 3 for circle.";
 	cin>>ch;
 	s1=&t;
@@ -69,5 +78,5 @@ void main()
 	s2->display_area();
 	else
 	s3->display_area();
-	getch();
+	//getch();
 }

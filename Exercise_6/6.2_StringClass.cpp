@@ -1,4 +1,11 @@
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<cstring>
 
 using std::cout;
@@ -11,7 +18,7 @@ public:
 	String()
 	{
 	    s = new char[0];
-	    s == NULL;
+	    //s = NULL; //changed
 	}
 	String(char *v)
 	{

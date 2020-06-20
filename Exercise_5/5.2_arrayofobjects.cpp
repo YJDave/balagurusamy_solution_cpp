@@ -4,9 +4,18 @@
 3.to withdraw
 by using data types name, acc_type,acc_no,balance for 10 students:
 */
+#ifdef _WIN32
 #include<iostream.h>
 #include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
 #include<stdlib.h>
+using namespace std;
 class bank_acc
 {
 	char name[30];
@@ -53,14 +62,15 @@ class bank_acc
 		cout<<endl;
 	}
 };
-void main()
+int main()
 {
 	bank_acc b[10];
 	int n,i;
 	char c;
-	clrscr();
+	//clrscr();
 	cout<<"\nEnter number of students.";
 	cin>>n;
+	cout<<"\nEnter their details";
 	for(i=0;i<n;i++)
 	{
 		b[i].init();
@@ -76,5 +86,5 @@ void main()
 	cout<<"Displaying entire information:"<<endl;
 	for(i=0;i<n;i++)
 	b[i].display();
-	getch();
+	//getch();
 }

@@ -1,5 +1,14 @@
+#ifdef _WIN32
 #include<iostream.h>
 #include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
+using namespace std;
 double fact(int n)
 {
 	if(n==1)
@@ -7,11 +16,11 @@ double fact(int n)
 	else
 		return n*fact(n-1);
 }
-void main()
+int main()
 {
 	double e=1.0;
 	int n,i;
-	clrscr();
+	//clrscr(); //changed
 	cout<<"Enter Limit of Series..."<<endl;
 	cin>>n;
 	for(i=1;i<=n;i++)
@@ -20,5 +29,5 @@ void main()
 	}
 	cout.precision(4);//For Accuracy acc=0.0001
 	cout<<"e = "<<e;
-	getch();
+	//getch();
 }

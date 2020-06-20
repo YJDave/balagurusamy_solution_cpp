@@ -4,9 +4,18 @@
 3.to withdraw
 by using data types name, acc_type,acc_no,balance
 */
+#ifdef _WIN32
 #include<iostream.h>
 #include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
 #include<stdlib.h>
+using namespace std;
 class bank_acc
 {
 	char name[30];
@@ -53,11 +62,11 @@ class bank_acc
 		cout<<endl;
 	}
 };
-void main()
+int main()
 {
 	bank_acc b1;
 	char c;
-	clrscr();
+	//clrscr(); //changed
 	b1.init();
 	b1.display();
 	while(1)

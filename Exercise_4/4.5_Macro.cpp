@@ -1,5 +1,12 @@
-#include<stdio.h>
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
+#include<stdio.h>
 #define MAX(a, b, c) ((a)>(b)?((a)>(c)?(1):(0)):((b)>(c)?(-1):(0)))//:(a==b)?(0):(-1))
 
 int main()

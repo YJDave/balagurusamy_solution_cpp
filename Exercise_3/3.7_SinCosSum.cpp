@@ -5,8 +5,16 @@
     sum(x) = 1 + (1/2)^2 + (1/3)^3 + (1/4)^4 +..
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#include<cmath.h>
+#endif
+
+#ifdef linux
 #include<iostream>
 #include<cmath>
+#endif
+
 #include<stdlib.h>
 
 //set fix value of PIE and MAX

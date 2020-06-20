@@ -1,6 +1,13 @@
-# define M 20
-# define N 20
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
+#define M 20
+#define N 20
 #include<stdio.h>
 
 class Mat

@@ -1,4 +1,11 @@
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<stdio.h>
 #include<string.h>
 

@@ -1,5 +1,13 @@
+#ifdef _WIN32
+#include<iostream.h>
+#include<cmath.h>
+#endif
+
+#ifdef linux
 #include<iostream>
 #include<cmath>
+#endif
+
 #include<math.h>
 #include<stdlib.h>
 

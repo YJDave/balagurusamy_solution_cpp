@@ -3,8 +3,16 @@
     Area of triangle = base*height/2
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#include<cmath.h>
+#endif
+
+#ifdef linux
 #include<iostream>
 #include<cmath>
+#endif
+
 #include<stdio.h>
 
 //define fix value of PIW
@@ -27,7 +35,7 @@ double area(double base, double height)
 
 int main()
 {
-    double r,s,a;
+    double r,s; //changed
     cout<<"\nEnter the radius of circle : ";
     cin>>r;
 
@@ -38,7 +46,7 @@ int main()
     cout<<"\nEnter the height of triangle : ";
     cin>>s;
     cout<<"\n\nArea of triangle is : ";
-    printf("%.8f\n",area(r));
+    printf("%.8f\n",area(r,s));
     return 0;
 
 }

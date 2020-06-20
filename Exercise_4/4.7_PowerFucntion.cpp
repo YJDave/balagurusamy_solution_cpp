@@ -1,9 +1,18 @@
 /*
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#include<cmath.h>
+#endif
+
+#ifdef linux
 #include<iostream>
-#include<stdio.h>
 #include<cmath>
+#endif
+
+#include<stdio.h>
+
 
 using std::cout;
 using std::cin;
@@ -16,9 +25,9 @@ double power(double m,int n=2)
         n=0-n;
     if (n==0)
         return 1;
-        //recursion 
-        m = m*power(m,n-1);
-        return m;
+    //recursion //changed
+    m = m*power(m,n-1);
+    return m;
 }
 
 int main()

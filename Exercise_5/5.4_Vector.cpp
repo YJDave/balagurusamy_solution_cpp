@@ -1,7 +1,13 @@
 // Modify the class and program of Exercise 5.2 such that program would be able to
 // add two vectors and display the resultant vector.
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
 
 using std::cout;
 using std::cin;

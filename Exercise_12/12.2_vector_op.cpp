@@ -1,7 +1,16 @@
+#ifdef _WIN32
 #include<iostream.h>
-#include<iomanip.h>
 #include<conio.h>
+#include<iomanip.h>
+#endif
 
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#include<iomanip>
+#endif
+
+using namespace std;
 template <class T>
 class vector
 {
@@ -78,7 +87,7 @@ int main()
 {
 	vector<float> obj;
 	int s;
-	clrscr();
+	//clrscr();
 	cout<<" enter size of vector : ";
 	cin>>s;
 	obj.creat_vector(s);
@@ -98,5 +107,5 @@ int main()
 	cout<<" Now contents : "<<endl;
 	obj.display();
 	obj.modify();
-	getch();
+	//getch();
 }
