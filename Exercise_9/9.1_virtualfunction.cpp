@@ -8,8 +8,17 @@
   in derived classes to suit their requirements.
   Using these 3 classes, design a program that will accept the dimensions
   of the shapes interactively and display area.*/
-#include<conio.h>
+#ifdef _WIN32
 #include<iostream.h>
+#include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
+using namespace std;
 class shape
 {
 	public:
@@ -50,7 +59,7 @@ void rectangle::display_area()
 	area=x*y;
 	cout<<"\nArea="<<area;
 }
-void main()
+int main()
 {
 	shape *s1,*s2;
 	triangle t;
@@ -58,7 +67,7 @@ void main()
 	rectangle r;
 	s2=&r;
 	int c;
-	clrscr();
+	//clrscr();
 	cout<<"\nFor finding the area of triangle,enter <1>";
 	cout<<"\nFor finding the area of rectangle,enter <2>";
 	cin>>c;
@@ -66,7 +75,7 @@ void main()
 	s1->display_area();
 	else
 	s2->display_area();
-	getch();
+	//getch();
 }
 
 

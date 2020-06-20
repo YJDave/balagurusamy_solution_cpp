@@ -4,7 +4,13 @@
 
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
 
 //set maximum value for total votes
 //(total no of candidate, each candidate can give only vote)
@@ -23,7 +29,7 @@ int main()
     //spoiltBallots are vote which do not match to any party's vote
 
     //information to show user
-    cout<<"\nPress 1 to vote 'A' party\nPress 2 to 'B' party"
+    cout<<"\nPress 1 to vote 'A' party\nPress 2 to vote 'B' party"
         <<"\nPress 3 to vote 'C' party\nPress 4 to vote 'D' party"
         <<"\nPress 5 to vote 'E' party"<<endl;
     cout<<"\nEnter all(total : 10) one by one votes \n";
@@ -54,6 +60,7 @@ int main()
             break;
         }
     }
+    //changed
     
     //print result
     cout<<"\nParty 'A' gets "<<Aparty<<" votes out of "<<maxVote<<" votes "
@@ -62,13 +69,13 @@ int main()
     cout<<"\nParty 'B' gets "<<Bparty<<" votes out of "<<maxVote<<" votes "
         <<"\nParty 'B' gets "<<(float)Bparty/maxVote*100<<"% votes of total votes"<<endl;
     
-    cout<<"\nParty 'C' gets "<<r<<" votes out of "<<maxVote<<" votes "
+    cout<<"\nParty 'C' gets "<<Cparty<<" votes out of "<<maxVote<<" votes "
         <<"\nParty 'C' gets "<<(float)Cparty/maxVote*100<<"% votes of total votes"<<endl;
     
-    cout<<"\nParty 'D' gets "<<s<<" votes out of "<<maxVote<<" votes "
+    cout<<"\nParty 'D' gets "<<Dparty<<" votes out of "<<maxVote<<" votes "
         <<"\nParty 'D' gets "<<(float)Dparty/maxVote*100<<"% votes of total votes"<<endl;
     
-    cout<<"\nParty 'E' gets "<<t<<" votes out of "<<maxVote<<" votes "
+    cout<<"\nParty 'E' gets "<<Eparty<<" votes out of "<<maxVote<<" votes "
         <<"\nParty 'E' gets "<<(float)Eparty/maxVote*100<<"% votes of total votes"<<endl;
     
     cout<<"\n"<<spoiltBallots<<" votes are spoilt ballots "<<endl;

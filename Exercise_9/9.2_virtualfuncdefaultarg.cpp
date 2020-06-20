@@ -1,8 +1,17 @@
 /*9.2-Extend 9.1 to display area of circles. For a circle,only
   one value is needed i.e. radius but in get_data() function
   2 values are passed.*/
-#include<conio.h>
+#ifdef _WIN32
 #include<iostream.h>
+#include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
+using namespace std;
 class shape
 {
 	public:
@@ -56,14 +65,14 @@ void circle::display_area()
 	area=3.14*x*x;
 	cout<<"\nArea="<<area;
 }
-void main()
+int main()
 {
 	shape *s1,*s2,*s3;
 	triangle t;
 	rectangle r;
 	circle c;
 	int ch;
-	clrscr();
+	//clrscr();
 	cout<<"\nEnter 1 for triangle, 2 for rectangle and 3 for circle.";
 	cin>>ch;
 	s1=&t;
@@ -75,7 +84,7 @@ void main()
 	s2->display_area();
 	else
 	s3->display_area();
-	getch();
+	//getch();
 }
 
 

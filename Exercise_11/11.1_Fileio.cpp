@@ -1,22 +1,33 @@
+#ifdef _WIN32
 #include<iostream.h>
 #include<conio.h>
 #include<fstream.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#include<fstream>
+#endif
+
+#include<fstream>
 #include<ctype.h>
 
+using namespace std;
 int main()
 {
-	clrscr();
+	//clrscr();
 	char ch;
 	int f=0;
 	ifstream inf;
 	ofstream outf;
-	inf.open("file.txt");
-	outf.open("file2.txt");
+	inf.open("../file.txt");
+	outf.open("../file2.txt");
 	if(!inf)
 	{
 		cout<<"error in opening file !!!"<<endl;
-		getch();
-		return -1
+		//getch();
+		return -1;
 	}
 	while(inf)
 	{
@@ -35,8 +46,10 @@ int main()
 		}
 		outf.put(ch);
 	}
+	outf.seekp(-1, ios::end); //FIXED double character entry.
+	outf.put(' ');
 	inf.close();
 	outf.close();
-	getch();
+	//getch();
 	return 0;
 }

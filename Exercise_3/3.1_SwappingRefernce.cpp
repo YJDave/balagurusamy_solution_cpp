@@ -5,7 +5,13 @@
   
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
 using namespace std;
 
 int main()
@@ -19,7 +25,7 @@ int main()
     swap(a,b);
     cout<<"\nAfter swapping the value using reference variables argument ";
     cout<<"\n\nvalue of First variable : "<<a<<endl;
-    cout<<"\nvalue of Second variable : "<<s<<endl;
+    cout<<"\nvalue of Second variable : "<<b<<endl; //changed
     return 0;
 }
 

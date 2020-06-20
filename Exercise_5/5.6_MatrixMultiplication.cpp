@@ -1,7 +1,14 @@
 // Write a function that receives two matrix objects as arguments and returns
 // a new matrix object containing their multiplication result.
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<stdlib.h>
 using namespace std;
 
@@ -27,7 +34,7 @@ void matrix::get()
     {
         for(int j=1;j<4;j++)
         {
-            cout<<"Enter the value of m["<<i<<"]["<<j<<"]"+" : ";
+            cout<<"Enter the value of m[" <<i<< "][" <<j<< "]" << " : "; //changed
             cin>>m[i][j];
         }
     }

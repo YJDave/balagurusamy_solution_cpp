@@ -3,7 +3,14 @@
 
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<math.h>
 using namespace std;
 

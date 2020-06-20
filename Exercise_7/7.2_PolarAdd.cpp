@@ -1,4 +1,11 @@
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<stdio.h>
 #include<math.h>
 
@@ -26,7 +33,7 @@ public:
 
 void polar:: convert(void)
 {
-	x = r*cos(a*3.14159/180)//degree to radian as cos takes input in radians.;
+	x = r*cos(a*3.14159/180);//degree to radian as cos takes input in radians.; //changed
 	std::cout<<x<<"\n";
 	y = r*sin(a*3.14159/180);
 	std::cout<<y<<"\n";
@@ -37,7 +44,7 @@ polar polar:: operator+ (polar p)
 	polar temp;
 	temp.x = x + p.x;
 	temp.y = y + p.y;
-	temp.a = atan(temp.y/temp.x)*180/3.14159//radian to degree conversion;
+	temp.a = atan(temp.y/temp.x)*180/3.14159;//radian to degree conversion; //changed
 	temp.r = sqrt(temp.x*temp.x + temp.y*temp.y);
 	return temp;
 }

@@ -1,10 +1,18 @@
 /*
 
 */
-#include<stdio.h>
+#ifdef _WIN32
+#include<iostream.h>
+#include<cmath.h>
+#endif
+
+#ifdef linux
 #include<iostream>
-#include<math.h>
 #include<cmath>
+#endif
+
+#include<stdio.h>
+#include<math.h>
 using namespace std;
 
 class table

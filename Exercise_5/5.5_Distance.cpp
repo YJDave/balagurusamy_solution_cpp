@@ -7,7 +7,14 @@
     function will display answer in meter and centimeters
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<stdlib.h>
 
 using namespace std;

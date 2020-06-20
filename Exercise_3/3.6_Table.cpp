@@ -1,11 +1,19 @@
+#ifdef _WIN32
 #include<iostream.h>
-#include<conio.h>
+#include <conio.h>
+#endif
 
+#ifdef linux
+#include<iostream>
+#include <curses.h>
+#endif
+ //conio.h //changed
+using namespace std;
 int main()
 {
 	int i,players,runs[5],inn[5],notout[5],average[5];
-	char name[20][5];
-	clrscr();
+	char name[5][20];
+	//clrscr(); //changed
 	cout<<"Enter number of players(no more than 5): ";
 	cin>>players;
 	for(i=1;i<=players;i++)
@@ -29,6 +37,6 @@ int main()
 	{
 		cout<<name[i]<<"\t"<<runs[i]<<"\t"<<inn[i]<<"\t"<<notout[i]<<"\t\t"<<average[i]<<endl;
 	}
-	getch();
+	//getch();
 	return 0;
 }

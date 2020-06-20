@@ -1,5 +1,14 @@
+#ifdef _WIN32
 #include<iostream.h>
 #include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
+using namespace std;
 const int size=5;
 template <class T>
 
@@ -20,7 +29,7 @@ vector<T>::vector(T *b)
 }
 
 template<class T>
-T vector<T>::lsearch(vector<T> &m,int key)
+vector<T>::lsearch(vector<T> &m,int key)
 {
  	for(int k=0;k<5;k++)
  	{
@@ -35,7 +44,7 @@ int main()
  	int x[size]={5,7,3,9,8};
  	vector<int> v1;
  	int key,flag;
- 	clrscr();
+ 	//clrscr();
  	v1=x;
  	cout<<"Enter Key to Search";
  	cin>>key;
@@ -44,5 +53,5 @@ int main()
 		cout<<"Element not Found.."<<endl;
  	else
 		cout<<"Element is at "<<flag+1<<"th Position"<<endl;
- 	getch();
+ 	//getch();
 }

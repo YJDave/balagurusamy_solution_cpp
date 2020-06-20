@@ -5,7 +5,7 @@
     * Deposit --> Deposit(add) given amount to total balance of selected account
     * Withdraw --> Withdraw(subtract) given amount from total balance of selected account
     * Display --> Display all detail of selected account
-/*
+*/ //changed
 
 /* How program works?
 
@@ -24,7 +24,14 @@
 
 */
 
+#ifdef _WIN32
+#include<iostream.h>
+#endif
+
+#ifdef linux
 #include<iostream>
+#endif
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

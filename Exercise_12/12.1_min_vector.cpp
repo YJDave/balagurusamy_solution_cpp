@@ -1,5 +1,14 @@
+#ifdef _WIN32
 #include<iostream.h>
 #include<conio.h>
+#endif
+
+#ifdef linux
+#include<iostream>
+#include<curses.h>
+#endif
+
+using namespace std;
 const int size=5;
 
 template <class T>
@@ -21,7 +30,7 @@ vector<T>::vector(T *b)
 }
 
 template<class T>
-T vector<T>::minimum(vector<T> &m)
+vector<T>::minimum(vector<T> &m)
 {
  	int j=0;
  	for(int k=1;k<size;k++)
@@ -46,9 +55,9 @@ int main()
 {
  	int x[size]={5,7,3,9,8};
  	vector<int> v1;
- 	clrscr();
+ 	//clrscr();
  	v1=x;
  	cout<<" minimum value = "<<v1.minimum(v1)<<" of array";
  	v1.show();
- 	getch();
+ 	//getch();
 }
